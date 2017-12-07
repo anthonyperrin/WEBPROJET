@@ -47,6 +47,7 @@
         </div>
     </nav>
 
+    <h1>Bonsoir à tous!</h1>
     <?php
     //Si l'utilisateur est connecté, on affiche la recherche de livre, sinon, on affiche le formaulaire de connexion
     if (empty($_SESSION)) {
