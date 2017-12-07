@@ -2,49 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90421e18-5c67-4896-9192-6e583e61bbe5" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/WEBPROJET.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/2842f633-49d3-41c5-9a58-f042f0c24b9a.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/php.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/HEAD" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/admin.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/config" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/business-frontpage.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/style-index.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/description" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/hooks/applypatch-msg.sample" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/hooks/commit-msg.sample" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/hooks/post-update.sample" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/hooks/pre-applypatch.sample" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/hooks/pre-commit.sample" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/hooks/pre-push.sample" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/hooks/pre-rebase.sample" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/hooks/pre-receive.sample" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/hooks/prepare-commit-msg.sample" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/hooks/update.sample" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/index.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/info/exclude" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/inscription.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/php/ajout-livre-fonction.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/php/connection-fonction.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/php/deconnection-fonction.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/php/inscription-fonction.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/php/pagebuilder-fonction.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap-grid.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap-grid.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap-reboot.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap-reboot.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.bundle.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.bundle.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/jquery/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/jquery/jquery.min.js" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/inscription.php" afterPath="$PROJECT_DIR$/inscription.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -85,8 +44,8 @@
       <file leaf-file-name="inscription.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/inscription.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="23" column="47" lean-forward="true" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
+            <state relative-caret-position="806">
+              <caret line="46" column="9" lean-forward="true" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -148,10 +107,10 @@
       <list>
         <option value="$PROJECT_DIR$/php/deconnection-fonction.php" />
         <option value="$PROJECT_DIR$/php/connection-fonction.php" />
-        <option value="$PROJECT_DIR$/inscription.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/2842f633-49d3-41c5-9a58-f042f0c24b9a/console.sql" />
         <option value="$PROJECT_DIR$/php/inscription-fonction.php" />
+        <option value="$PROJECT_DIR$/inscription.php" />
       </list>
     </option>
   </component>
@@ -240,7 +199,7 @@
       <workItem from="1512392390821" duration="27000" />
       <workItem from="1512458734392" duration="4082000" />
       <workItem from="1512477208361" duration="1012000" />
-      <workItem from="1512637410227" duration="2196000" />
+      <workItem from="1512637410227" duration="3913000" />
     </task>
     <task id="LOCAL-00001" summary="Sauvergarde complète">
       <created>1512640334605</created>
@@ -253,7 +212,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16733000" />
+    <option name="totallyTimeSpent" value="18450000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -605,8 +564,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/inscription.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="23" column="47" lean-forward="true" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
+        <state relative-caret-position="806">
+          <caret line="46" column="9" lean-forward="true" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
           <folding />
         </state>
       </provider>
