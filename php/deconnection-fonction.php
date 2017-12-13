@@ -1,7 +1,7 @@
 <?php
 function DisplayFormDeconnection() {
     ?>
-    <div class="row">
+    <div class="container">
         <form action="index.php" method="post">
             <input type="submit" name="submitdeconnection" value="Se déconnecter">
         </form>

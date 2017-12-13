@@ -36,14 +36,18 @@ function CheckFormConnection($bdd) {
                 $userinfo = $requser->fetch();
                 $_SESSION = $userinfo;
                 //header("Location: index.php?id=".$_SESSION['0']);
-                echo 'vous êtes connecté!';
+                $erreur= "Vous êtes connecté!";
             } else {
                 $erreur = "Mail ou mot de passe incorrect !";
             }
         } else {
             $erreur = "Tous les champs doivent être complétés !";
         }
-        echo $erreur;
+        ?>
+        <div class="container">
+          <?php echo $erreur; ?>
+        </div>
+        <?php
     }
     return $_SESSION;
 }
