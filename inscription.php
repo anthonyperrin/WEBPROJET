@@ -38,7 +38,7 @@
                         <a class="nav-link" href="inscription.php">Inscription</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Profil</a>
+                        <a class="nav-link" href="profil.php">Profil</a>
                     </li>
                 </ul>
             </div>

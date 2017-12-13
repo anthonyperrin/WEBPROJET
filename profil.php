@@ -1,7 +1,13 @@
 <?php session_start(); ?>
-<?php include ("php/connection-fonction.php"); ?>
-<?php include ("php/inscription-fonction.php"); ?>
-<?php include ("php/deconnection-fonction.php"); ?>
+<?php include("php/profil-fonction.php"); ?>
+<?php
+  try {
+      $bdd = new PDO('mysql:host=127.0.0.1;dbname=espace_membre', 'root', '');
+      $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  } catch (PDOException $e) {
+      echo 'Échec lors de la connexion : ' . $e->getMessage();
+  }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +38,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="index.php">Accueil
                             <span class="sr-only">(current)</span>
                         </a>
@@ -40,7 +46,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="inscription.php">Inscription</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="profil.php">Profil</a>
                     </li>
                 </ul>
@@ -51,21 +57,13 @@
   </header>
     <div class="container">
       <?php
-      $_SESSION = CheckFormConnection($bdd);
-      //Si l'utilisateur est connecté, on affiche la recherche de livre, sinon, on affiche le formaulaire de connexion
-      if (empty($_SESSION)) {
-          //Affichage formulaire de connexion
-          DisplayFormConnection();
-          //Connexion
-          CheckFormInscription($bdd);
+        $NomSession = $_SESSION['ID_Membre'];
+        echo $NomSession;
+        echo "Nom :";
+        $reqmail = $bdd->prepare("SELECT `Nom_Membre` FROM membre WHERE ID_Membre = `$NomSession`");
+        $reqmail->execute();
 
-      } else { //si on est connectés
-          //Affichage du bouton de déconnexion
-          DisplayFormDeconnection();
-          //Déconnexion
-          CheckFormDeconnection();
-      }
-      print_r($_SESSION);
+        echo "Prénom :";
       ?>
     </div>
     </div>

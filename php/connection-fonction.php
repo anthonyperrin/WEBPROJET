@@ -10,7 +10,7 @@ try {
 //Affichage du formulaire de connexion
 function DisplayFormConnection() {
     ?>
-    <div class="container bg-faded">
+    <div class="bg-faded">
         <form class="" action="index.php" method="POST">
             <input type="mail" name="mailconnection" placeholder="Email de connection...">
             <input type="password" name="mdpconnection" placeholder="Mot de passe...">
@@ -36,7 +36,7 @@ function CheckFormConnection($bdd) {
                 $userinfo = $requser->fetch();
                 $_SESSION = $userinfo;
                 //header("Location: index.php?id=".$_SESSION['0']);
-                echo 'vous êtes connecté!';
+                echo 'Vous êtes connecté!';
             } else {
                 $erreur = "Mail ou mot de passe incorrect !";
             }
