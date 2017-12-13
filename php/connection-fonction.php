@@ -18,7 +18,7 @@ function DisplayFormConnection() {
         </form>
         <a href="inscription.php">S'inscrire</a><br>
         <a href="admin.php">Espace administrateur</a>
-    </div>';
+    </div>
     <?php
 }
 
@@ -35,7 +35,8 @@ function CheckFormConnection($bdd) {
             if ($userexist == 1) {
                 $userinfo = $requser->fetch();
                 $_SESSION = $userinfo;
-                header("Location: index.php?id=".$_SESSION['0']);
+                //header("Location: index.php?id=".$_SESSION['0']);
+                echo 'vous êtes connecté!';
             } else {
                 $erreur = "Mail ou mot de passe incorrect !";
             }
@@ -46,7 +47,6 @@ function CheckFormConnection($bdd) {
     }
     return $_SESSION;
 }
-$_SESSION = CheckFormConnection($bdd);
 
 
 ?>

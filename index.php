@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php include ("php/connection-fonction.php"); ?>
 <?php include ("php/inscription-fonction.php"); ?>
 <?php include ("php/deconnection-fonction.php"); ?>
@@ -47,8 +48,8 @@
         </div>
     </nav>
 
-    <h1>Bonsoir à tous!</h1>
     <?php
+    $_SESSION = CheckFormConnection($bdd);
     //Si l'utilisateur est connecté, on affiche la recherche de livre, sinon, on affiche le formaulaire de connexion
     if (empty($_SESSION)) {
         //Affichage formulaire de connexion
@@ -63,7 +64,6 @@
         CheckFormDeconnection();
 
     }
-    print_r($_SESSION);
     ?>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
