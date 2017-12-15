@@ -27,10 +27,10 @@
     <!-- Custom styles for this template -->
     <link href="css/business-frontpage.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-light">
   <header class="masthead">
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="margin-bottom: 50px;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" style="margin-bottom: 50px;">
         <div class="container">
             <a class="navbar-brand" href="#">La maison du Livre</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,15 +57,21 @@
   </header>
     <div class="container">
       <?php
-        $NomSession = $_SESSION['ID_Membre'];
-        echo $NomSession;
-        echo "Nom :";
-        $reqmail = $bdd->prepare("SELECT `Nom_Membre` FROM membre WHERE ID_Membre = `$NomSession`");
-        $reqmail->execute();
-
-        echo "Prénom :";
+        $NomSession = $_SESSION['Nom_Membre'];
+        echo "<br><b>Nom : </b>" . $_SESSION['Nom_Membre'] . "<br>";
+        echo "<b>Prénom : </b>" . $_SESSION['Prenom_Membre'] . "<br>";
+        echo "<b>Pseudo : </b>" . $_SESSION['Pseudo_Membre'] . "<br><br>";
+        echo "<b>Date de naissance : </b>" . $_SESSION['DateNai_Membre'] . "<span class='text-secondary'> [Année - Mois - Jours] </span><br><br>";
+        echo "<b>Adresse : </b>" . $_SESSION['Adresse1_Membre'] . "<br>";
+        echo "<b>Complément d'adresse : </b>" . $_SESSION['Adresse2_Membre'] . "<br>";
+        echo "<b>Ville : </b>" . $_SESSION['Ville_Membre'] . "<br>";
+        echo "<b>Code postal : </b>" . $_SESSION['CP_Membre'] . "<br><br>";
+        echo "<b>Téléphone : </b>" . $_SESSION['Tel_Membre'] . "<br>";
+        echo "<b>Mail : </b>" . $_SESSION['Mail_Membre'] . "<br><br>";
       ?>
-    </div>
+      <form class="" action="index.html" method="GET">
+
+      </form>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
