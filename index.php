@@ -51,6 +51,8 @@
     <section class="bg-white">
       <div class="container">
         <br><br><br>
+        <h2>Bienvenue sur le site de La Maison du Livre</h2>
+        <br>
         <?php
         $_SESSION = CheckFormConnection($bdd);
         //Si l'utilisateur est connecté, on affiche la recherche de livre, sinon, on affiche le formaulaire de connexion
@@ -66,7 +68,6 @@
             //Déconnexion
             CheckFormDeconnection();
         }
-        print_r($_SESSION);
         ?>
         <br><br><br>
       </div>
