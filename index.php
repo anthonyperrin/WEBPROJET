@@ -21,53 +21,60 @@
     <!-- Custom styles for this template -->
     <link href="css/business-frontpage.css" rel="stylesheet">
 </head>
-<body>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">La maison du Livre</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.php">Accueil
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="inscription.php">Inscription</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Profil</a>
-                    </li>
-                </ul>
+<body class="bg-light">
+    <header class="masthead">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">La maison du Livre</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.php">Accueil
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="inscription.php">Inscription</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="profil.php">Profil</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
+    <section class="bg-white">
+      <div class="container">
+        <br><br><br>
+        <h2>Bienvenue sur le site de La Maison du Livre</h2>
+        <br>
+        <?php
+        $_SESSION = CheckFormConnection($bdd);
+        //Si l'utilisateur est connecté, on affiche la recherche de livre, sinon, on affiche le formaulaire de connexion
+        if (empty($_SESSION)) {
+            //Affichage formulaire de connexion
+            DisplayFormConnection();
+            //Connexion
+            CheckFormInscription($bdd);
 
-    <?php
-    $_SESSION = CheckFormConnection($bdd);
-    //Si l'utilisateur est connecté, on affiche la recherche de livre, sinon, on affiche le formaulaire de connexion
-    if (empty($_SESSION)) {
-        //Affichage formulaire de connexion
-        DisplayFormConnection();
-        //Connexion
-        CheckFormInscription($bdd);
+        } else { //si on est connectés
+            //Affichage du bouton de déconnexion
+            DisplayFormDeconnection();
+            //Déconnexion
+            CheckFormDeconnection();
+        }
+        ?>
+        <br><br><br>
+      </div>
 
-    } else { //si on est connectés
-        //Affichage du bouton de déconnexion
-        DisplayFormDeconnection();
-        //Déconnexion
-        CheckFormDeconnection();
-
-    }
-    ?>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    </section>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 </body>
 </html>
