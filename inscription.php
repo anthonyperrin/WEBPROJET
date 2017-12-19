@@ -50,6 +50,7 @@
         <?php
           //Formulaire d'inscription
           DisplayFormInscription();
+          //Traitement du formulaire
           CheckFormInscription($bdd);
         ?>
         <br><br><br>

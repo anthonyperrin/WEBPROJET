@@ -21,8 +21,9 @@ function DisplayFormConnection() {
 }
 
 //Vérification du formulaire
-//[OUT] =
+//[OUT] = données de l'utilisateur dans $_SESSION
 function CheckFormConnection($bdd) {
+  //Si on valide le formulaire de connexion
   if (isset($_POST['formconnection'])) {
     $mailconnect = $_POST['mailconnection'];
     $mdpconnect = sha1($_POST['mdpconnection']);

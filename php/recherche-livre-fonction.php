@@ -8,6 +8,7 @@ try {
   echo 'Échec lors de la connexion : ' . $e->getMessage();
 }
 
+//Formulaire de recherche de livre par titre, auteur ou catégorie
 function FormRechercheLivre($bdd){
   ?>
   <form class="" action="index.php" method="post">
@@ -21,9 +22,12 @@ function FormRechercheLivre($bdd){
   </form>
   <br>
   <?php
+  //Test de validation du formulaire de recherche de livre
   if (isset($_POST['submitrecherchelivre'])) {
     $inputrecherche = $_POST['inputrecherchelivre'];
     $requete = 'SELECT Titre_Livre FROM livre WHERE TRUE';
+    // Cas 1:
+    // On cherche par titre
     switch ($_POST['optionrecherchelivre']) {
       case 1:
       $requete = "SELECT Titre_Livre, Nom_Auteur, Prenom_Auteur, Type_Categorie
@@ -31,12 +35,16 @@ function FormRechercheLivre($bdd){
                   WHERE livre.ID_Categorie=categorie.ID_Categorie AND livre.ID_Auteur=auteur.ID_Auteur AND livre.Titre_Livre
                   LIKE '%" . $inputrecherche . "%'";
       break;
+      // Cas 2:
+      // On cherche par auteur
       case 2:
         $requete = "SELECT Titre_Livre, Nom_Auteur, Prenom_Auteur, Type_Categorie
                     FROM livre, auteur, categorie
                     WHERE livre.ID_Categorie=categorie.ID_Categorie AND livre.ID_Auteur=auteur.ID_Auteur AND auteur.Nom_Auteur
                     LIKE '%" . $inputrecherche . "%'";
       break;
+      // Cas 3:
+      // On cherche par catégorie
       case 3:
         $requete = "SELECT Titre_Livre, Nom_Auteur, Prenom_Auteur, Type_Categorie
                     FROM livre, categorie, auteur
@@ -44,14 +52,17 @@ function FormRechercheLivre($bdd){
                     LIKE '%" . $inputrecherche . "%'";
       break;
     }
+    //Requête de test
     $requser = $bdd->query($requete);
     $displaylistelivre = $requser->fetchall();
+    //On display la liste des livres trouvés
     foreach ($displaylistelivre as $recherche) {
       echo '<li>"' . $recherche['Titre_Livre'] . '", <em>' .
       $recherche['Nom_Auteur'] . ' ' . $recherche['Prenom_Auteur'] . ', <span class="text-secondary">' .
       $recherche['Type_Categorie'] . '</span>' .
       '</em>' . '</li>';
     }
+    //Si on trouve aucun livre, on affiche une erreur
     $testrecherchelivre = $requser->rowCount();
     if ($testrecherchelivre == 0) {
       echo 'Aucun livre ne correspond à cette recherche.';

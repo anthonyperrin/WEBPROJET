@@ -14,9 +14,6 @@
     <h1>La Maison du Livre</h1>
     <h2>Espace administrateur</h2>
       <?php
-        if(isset($error)) {
-          echo('<font color="red"' . $erreur . '</font>');
-        }
       ?>
     </div>
     <!-- Optional JavaScript -->

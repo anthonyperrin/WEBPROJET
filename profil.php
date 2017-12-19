@@ -59,6 +59,7 @@ try {
     <br><br><br>
     <h2>Mon profil</h2>
     <?php
+    //Affichage des données du profil stockées dans $_SESSION
     $NomSession = $_SESSION['Nom_Membre'];
     echo "<br><b>Nom : </b>" . $_SESSION['Nom_Membre'] . "<br>";
     echo "<b>Prénom : </b>" . $_SESSION['Prenom_Membre'] . "<br>";
