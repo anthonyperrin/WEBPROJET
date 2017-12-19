@@ -43,7 +43,7 @@
             </div>
         </div>
     </nav>
-    <section class="bg-white">
+    <section>
       <div class="container">
         <br><br><br>
         <h2>S'inscrire à La Maison du Livre</h2><br>

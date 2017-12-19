@@ -11,48 +11,51 @@ try {
 function FormRechercheLivre($bdd){
   ?>
   <form class="" action="index.php" method="post">
-    <input type="search" name="inputrecherchelivre" placeholder="Titre du livre...">
+    <select class="" name="optionrecherchelivre">
+      <option value="1">Titre</option>
+      <option value="2">Auteur</option>
+      <option value="3">Catégorie</option>
+    </select>
+    <input type="search" name="inputrecherchelivre" placeholder="Titre, auteur, ou catégorie...">
     <input type="submit" name="submitrecherchelivre" value="Rechercher">
   </form>
   <br>
   <?php
-  if(isset($_POST['submitrecherchelivre'])){
-    $titrelivre = $_POST['inputrecherchelivre'];
-    $requser = $bdd->query('SELECT Titre_Livre FROM livre WHERE Titre_Livre LIKE "%'.$titrelivre.'%"');
+  if (isset($_POST['submitrecherchelivre'])) {
+    $inputrecherche = $_POST['inputrecherchelivre'];
+    $requete = 'SELECT Titre_Livre FROM livre WHERE TRUE';
+    switch ($_POST['optionrecherchelivre']) {
+      case 1:
+      $requete = "SELECT Titre_Livre, Nom_Auteur, Prenom_Auteur, Type_Categorie
+                  FROM livre, auteur, categorie
+                  WHERE livre.ID_Categorie=categorie.ID_Categorie AND livre.ID_Auteur=auteur.ID_Auteur AND livre.Titre_Livre
+                  LIKE '%" . $inputrecherche . "%'";
+      break;
+      case 2:
+        $requete = "SELECT Titre_Livre, Nom_Auteur, Prenom_Auteur, Type_Categorie
+                    FROM livre, auteur, categorie
+                    WHERE livre.ID_Categorie=categorie.ID_Categorie AND livre.ID_Auteur=auteur.ID_Auteur AND auteur.Nom_Auteur
+                    LIKE '%" . $inputrecherche . "%'";
+      break;
+      case 3:
+        $requete = "SELECT Titre_Livre, Nom_Auteur, Prenom_Auteur, Type_Categorie
+                    FROM livre, categorie, auteur
+                    WHERE livre.ID_Categorie=categorie.ID_Categorie AND livre.ID_Auteur=auteur.ID_Auteur AND categorie.Type_Categorie
+                    LIKE '%" . $inputrecherche . "%'";
+      break;
+    }
+    $requser = $bdd->query($requete);
     $displaylistelivre = $requser->fetchall();
     foreach ($displaylistelivre as $recherche) {
-      echo '<a href="#">' . $recherche['Titre_Livre'] . '</a><br>';
-      ?>
-
-      <?php
+      echo '<li>"' . $recherche['Titre_Livre'] . '", <em>' .
+      $recherche['Nom_Auteur'] . ' ' . $recherche['Prenom_Auteur'] . ', <span class="text-secondary">' .
+      $recherche['Type_Categorie'] . '</span>' .
+      '</em>' . '</li>';
     }
-
+    $testrecherchelivre = $requser->rowCount();
+    if ($testrecherchelivre == 0) {
+      echo 'Aucun livre ne correspond à cette recherche.';
+    }
   }
-  /*$requser = $bdd->query("SELECT ID_Auteur, Nom_Auteur FROM auteur");
-  $queryauteur = $requser->fetchall();
-  ?>
-  <form class="" action="index.php" method="post">
-    <label for="auteurselection">Auteurs</label>
-    <select class="" name="auteur">
-      <?php
-      foreach ($queryauteur as $ligne) {
-        ?>
-        <option value="<?= $ligne["ID_Auteur"]; ?>"><?= $ligne["Nom_Auteur"]; ?></option>
-        <?php
-      }
-      ?>
-    </select>
-    <input type="submit" name="submitrecherchelivreauteur" value="Rechercher">
-  </form>
-  <br><br><br>
-  <?php
-  //lorsqu'on lance la recherche
-  if(isset($_POST['submitrecherchelivreauteur'])){
-    $requser = $bdd->query("SELECT `Titre_Livre` FROM `livre`, `auteur` WHERE livre.ID_Auteur=auteur.ID_Auteur AND livre.ID_Auteur=$ligne\[\'ID_Auteur\'\]");
-    $titrelivre = $requser->fetch();
-    echo '<strong>Liste des livres :</strong><br>';
-    echo '<a href="#">' . $titrelivre['Titre_Livre'] . '</a>';
-
-  }*/
 }
 ?>

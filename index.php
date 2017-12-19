@@ -49,7 +49,7 @@
       </div>
     </nav>
   </header>
-  <section class="bg-white">
+  <section>
     <div class="container">
       <br><br><br>
       <h2>Bienvenue sur le site de La Maison du Livre</h2>
