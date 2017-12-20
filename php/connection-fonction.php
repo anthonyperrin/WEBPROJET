@@ -11,10 +11,18 @@ try {
 function DisplayFormConnection() {
   ?>
   <form class="" action="index.php" method="POST">
-    <input type="mail" name="mailconnection" placeholder="Email de connection...">
-    <input type="password" name="mdpconnection" placeholder="Mot de passe...">
-    <input type="submit" name="formconnection" placeholder="Se connecter">
+    <div class="row">
+      <div class="col-3">
+        <input class="form-control" type="mail" name="mailconnection" placeholder="Email de connection...">
+      </div>
+      <div class="col-3">
+        <input class="form-control" type="password" name="mdpconnection" placeholder="Mot de passe...">
+      </div>
+    </div>
+    <br>
+    <input class="btn btn-primary" type="submit" name="formconnection" placeholder="Se connecter">
   </form>
+  <br>
   <a href="inscription.php">S'inscrire</a><br>
   <a href="admin.php">Espace administrateur</a>
   <?php

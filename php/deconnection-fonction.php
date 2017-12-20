@@ -2,8 +2,9 @@
 //Affichage du formulaire de déconnexion
 function DisplayFormDeconnection() {
     ?>
+    <br><br>
     <form action="index.php" method="post">
-        <input type="submit" name="submitdeconnection" value="Se déconnecter">
+        <input class="btn btn-danger" type="submit" name="submitdeconnection" value="Se déconnecter">
     </form>
     <?php
 }

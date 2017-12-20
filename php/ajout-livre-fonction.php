@@ -16,5 +16,6 @@ function DisplayFormAjoutAuteur() {
       <input type="submit" name="formajoutauteur" value="Valider">
 
     </form>
+    <?php
 }
  ?>

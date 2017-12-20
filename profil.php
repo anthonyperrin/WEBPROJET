@@ -1,5 +1,5 @@
 <?php session_start(); ?>
-<?php include("php/profil-fonction.php"); ?>
+<?php include("php/editerProfil-fonction.php"); ?>
 <?php
 try {
   $bdd = new PDO('mysql:host=127.0.0.1;dbname=espace_membre', 'root', '');
@@ -71,6 +71,14 @@ try {
     echo "<b>Code postal : </b>" . $_SESSION['CP_Membre'] . "<br><br>";
     echo "<b>Téléphone : </b>" . $_SESSION['Tel_Membre'] . "<br>";
     echo "<b>Mail : </b>" . $_SESSION['Mail_Membre'] . "<br><br>";
+    ?>
+    <br><br>
+    <h2>Editer mon Profil</h2>
+    <br>
+    <?php
+    DisplayFormEdition();
+    CheckFormEdition($bdd);
+
     ?>
   </div>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

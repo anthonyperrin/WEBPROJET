@@ -9,25 +9,52 @@ try {
 //Affichage du formulaire
 function DisplayFormInscription() {?>
   <form class="bg-faded" action="inscription.php" method="POST">
-    <input type="text" name="nom" placeholder="Nom..."><br>
-    <input type="text" name="prenom" placeholder="Prénom..."><br>
-    <input type="text" name="pseudo" placeholder="Pseudo..."><br><br>
+    <h4>Informations personnelles :</h4><br>
+    <div class="row">
+      <div class="col">
+        <input class="form-control" type="text" name="nom" placeholder="Nom..."><br>
+      </div>
+      <div class="col">
+        <input class="form-control" type="text" name="prenom" placeholder="Prénom..."><br>
+      </div>
+    </div>
+    <input class="form-control" type="text" name="pseudo" placeholder="Pseudo..."><br><br>
 
-    <input type="date" name="datenaissance"><br><br>
+    <input class="form-control" type="date" name="datenaissance"><br><br>
+    <h4>Adresse :</h4><br>
+    <input class="form-control" type="text" name="adresse1" placeholder="Adresse..."><br>
+    <input class="form-control" type="text" name="adresse2" placeholder="Complément d'adresse..."><br>
+    <div class="row">
+      <div class="col">
+        <input class="form-control" type="text" name="ville" placeholder="Ville..."><br>
+      </div>
+      <div class="col">
+        <input class="form-control" type="number" name="cp" placeholder="Code postal..."><br><br>
+      </div>
+    </div>
 
-    <input type="text" name="adresse1" placeholder="Adresse..."><br>
-    <input type="text" name="adresse2" placeholder="Complément d'adresse..."><br>
-    <input type="text" name="ville" placeholder="Ville..."><br>
-    <input type="number" name="cp" placeholder="Code postal..."><br><br>
+    <h4>Coordonnées :</h4><br>
+    <input class="form-control" type="tel" name="telephone" placeholder="Téléphone..."><br>
+    <div class="row">
+      <div class="col">
+        <input class="form-control" type="email" name="mail" placeholder="Mail...">
+      </div>
+      <div class="col">
+        <input class="form-control" type="email" name="mail2" placeholder="Confirmation du mail..."><br><br>
+      </div>
+    </div>
 
-    <input type="tel" name="telephone" placeholder="Téléphone..."><br>
-    <input type="email" name="mail" placeholder="Mail...">
-    <input type="email" name="mail2" placeholder="Confirmation du mail..."><br><br>
+    <h4>Mot de passe :</h4><br>
+    <div class="row">
+      <div class="col">
+        <input class="form-control" type="password" name="mdp" placeholder="Mot de passe...">
+      </div>
+      <div class="col">
+        <input class="form-control" type="password" name="mdp2" placeholder="Mot de passe"><br><br>
+      </div>
+    </div>
 
-    <input type="password" name="mdp" placeholder="Mot de passe...">
-    <input type="password" name="mdp2" placeholder="Mot de passe"><br><br>
-
-    <input type="submit" name="forminscription" value="S'inscrire">
+    <input class="btn btn-primary" type="submit" name="forminscription" value="S'inscrire">
   </form>
   <?php
 }

@@ -11,14 +11,16 @@ try {
 //Formulaire de recherche de livre par titre, auteur ou catégorie
 function FormRechercheLivre($bdd){
   ?>
-  <form class="" action="index.php" method="post">
-    <select class="" name="optionrecherchelivre">
+  <form class="col-5" action="index.php" method="post">
+    <select class="form-control"  name="optionrecherchelivre">
       <option value="1">Titre</option>
       <option value="2">Auteur</option>
       <option value="3">Catégorie</option>
     </select>
-    <input type="search" name="inputrecherchelivre" placeholder="Titre, auteur, ou catégorie...">
-    <input type="submit" name="submitrecherchelivre" value="Rechercher">
+    <br>
+    <input class="form-control" type="search" name="inputrecherchelivre" placeholder="Titre, auteur, ou catégorie...">
+    <br>
+    <input class="btn btn-primary" type="submit" name="submitrecherchelivre" value="Rechercher">
   </form>
   <br>
   <?php
@@ -58,7 +60,7 @@ function FormRechercheLivre($bdd){
     //On display la liste des livres trouvés
     foreach ($displaylistelivre as $recherche) {
       echo '<li>"' . $recherche['Titre_Livre'] . '", <em>' .
-      $recherche['Nom_Auteur'] . ' ' . $recherche['Prenom_Auteur'] . ', <span class="text-secondary">' .
+      $recherche['Prenom_Auteur'] . ' ' . $recherche['Nom_Auteur'] . ', <span class="text-secondary">' .
       $recherche['Type_Categorie'] . '</span>' .
       '</em>' . '</li>';
     }
