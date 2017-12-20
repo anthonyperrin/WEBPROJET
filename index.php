@@ -3,6 +3,11 @@
 <?php include ("php/inscription-fonction.php"); ?>
 <?php include ("php/deconnection-fonction.php"); ?>
 <?php include ("php/recherche-livre-fonction.php"); ?>
+<?php
+ini_set("display_errors",0);
+error_reporting(0);
+
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -68,10 +73,15 @@
         ?>
         <h4>Rechercher un livre</h4>
         <br>
-        <?php
-        //affichage de la recherche de livre
-        FormRechercheLivre($bdd);
+        <ul class="list-group" id="list-tab" role="tablist">
+          <?php
+          //affichage de la recherche de livre
+          FormRechercheLivre($bdd);
+          ?>
+        </ul>
 
+
+        <?php
         //Affichage du bouton de déconnexion
         DisplayFormDeconnection();
         //Déconnexion

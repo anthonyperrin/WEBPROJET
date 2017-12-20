@@ -32,7 +32,7 @@ function FormRechercheLivre($bdd){
     // On cherche par titre
     switch ($_POST['optionrecherchelivre']) {
       case 1:
-      $requete = "SELECT Titre_Livre, Nom_Auteur, Prenom_Auteur, Type_Categorie
+      $requete = "SELECT Titre_Livre, Nom_Auteur, Prenom_Auteur, Type_Categorie, Stock, Resume_Livre
                   FROM livre, auteur, categorie
                   WHERE livre.ID_Categorie=categorie.ID_Categorie AND livre.ID_Auteur=auteur.ID_Auteur AND livre.Titre_Livre
                   LIKE '%" . $inputrecherche . "%'";
@@ -40,7 +40,7 @@ function FormRechercheLivre($bdd){
       // Cas 2:
       // On cherche par auteur
       case 2:
-        $requete = "SELECT Titre_Livre, Nom_Auteur, Prenom_Auteur, Type_Categorie
+        $requete = "SELECT Titre_Livre, Nom_Auteur, Prenom_Auteur, Type_Categorie, Stock, Resume _Livre
                     FROM livre, auteur, categorie
                     WHERE livre.ID_Categorie=categorie.ID_Categorie AND livre.ID_Auteur=auteur.ID_Auteur AND auteur.Nom_Auteur
                     LIKE '%" . $inputrecherche . "%'";
@@ -48,7 +48,7 @@ function FormRechercheLivre($bdd){
       // Cas 3:
       // On cherche par catégorie
       case 3:
-        $requete = "SELECT Titre_Livre, Nom_Auteur, Prenom_Auteur, Type_Categorie
+        $requete = "SELECT Titre_Livre, Nom_Auteur, Prenom_Auteur, Type_Categorie, Stock, Resume_Livre
                     FROM livre, categorie, auteur
                     WHERE livre.ID_Categorie=categorie.ID_Categorie AND livre.ID_Auteur=auteur.ID_Auteur AND categorie.Type_Categorie
                     LIKE '%" . $inputrecherche . "%'";
@@ -59,10 +59,10 @@ function FormRechercheLivre($bdd){
     $displaylistelivre = $requser->fetchall();
     //On display la liste des livres trouvés
     foreach ($displaylistelivre as $recherche) {
-      echo '<li>"' . $recherche['Titre_Livre'] . '", <em>' .
+      echo '<li class="list-group-item d-flex justify-content-between align-items-center">"' . $recherche['Titre_Livre'] . ' <em>' .
       $recherche['Prenom_Auteur'] . ' ' . $recherche['Nom_Auteur'] . ', <span class="text-secondary">' .
       $recherche['Type_Categorie'] . '</span>' .
-      '</em>' . '</li>';
+      '</em>' . '<span class="badge badge-primary badge-pill">' . $recherche['Stock'] . '</span></li>';
     }
     //Si on trouve aucun livre, on affiche une erreur
     $testrecherchelivre = $requser->rowCount();
