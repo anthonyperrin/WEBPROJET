@@ -1,6 +1,9 @@
 <?php session_start(); ?>
 <?php include("php/editerProfil-fonction.php"); ?>
 <?php
+ini_set("display_errors",0);
+error_reporting(0);
+
 try {
   $bdd = new PDO('mysql:host=127.0.0.1;dbname=espace_membre', 'root', '');
   $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
